@@ -4,4 +4,23 @@
 
 <h1> Bienvenue Dans Mon Monde </h1>
 
+<div class="form-group row">
+{% for article in articles %}
+
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin:1%">
+  <div class="card-header">article</div>
+  <div class="card-body">
+    <h4 class="card-title">{{article.titre}}</h4>
+    <p class="card-text">
+
+    {{article.Appercu}}
+
+    </p>
+  </div>
+  <a href="{{path('article_show', {'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
+</div>
+
+{% endfor %}
+</div>
+
 {% endblock %}

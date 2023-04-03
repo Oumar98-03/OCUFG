@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     #[Route('/', name: 'app_admin')]
-    public function index(): Response
+    public function index(ArticlesRepository $repos): Response
     {
-        return $this->render('acceuil.html.twig');
+        return $this->render('acceuil.html.twig',['articles'=>$repos->findAll()]);
     }
    
     #[Route('/Presentation')]

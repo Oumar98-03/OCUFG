@@ -23,6 +23,9 @@ class Articles
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $dateCreation = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Appercu = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Articles
     public function setDateCreation(\DateTimeInterface $dateCreation): self
     {
         $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    public function getAppercu(): ?string
+    {
+        return $this->Appercu;
+    }
+
+    public function setAppercu(?string $Appercu): self
+    {
+        $this->Appercu = $Appercu;
 
         return $this;
     }
